@@ -15,12 +15,12 @@ namespace ShoppingDummyWebsite.AnnotationAndAttributes
         [TestInitialize]
         public void TestIni()
         {
-            Console.WriteLine("Test Initialized");
+            Console.WriteLine("Test Initialized executed in TestIni() method inside of ClassGeneric class");
         }
         [TestCleanup]
         public void TestClean()
         {
-            Console.WriteLine("Test Cleaned");
+            Console.WriteLine("Test Cleaned executed in TestClean() method of ClassGeneric class");
         }
 
 

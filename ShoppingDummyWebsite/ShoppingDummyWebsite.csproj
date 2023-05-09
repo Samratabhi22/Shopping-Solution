@@ -464,6 +464,7 @@
     <Compile Include="POM Classes\ConfirmationPage.cs" />
     <Compile Include="POM Classes\LoginPage.cs" />
     <Compile Include="POM Classes\ProductsPage.cs" />
+    <Compile Include="ProgramsPractice\FirstDay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawTestScripts\EndToEndTest.cs" />
   </ItemGroup>

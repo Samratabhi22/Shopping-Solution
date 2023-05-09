@@ -453,6 +453,7 @@
   <ItemGroup>
     <Compile Include="AnnotationAndAttributes\ClassGeneric.cs" />
     <Compile Include="AnnotationAndAttributes\ClassWithAll.cs" />
+    <Compile Include="AnnotationAndAttributes\ClassWithInheritance.cs" />
     <Compile Include="AnnotationAndAttributes\ClassWithoutInheritance.cs" />
     <Compile Include="CommonUtilities\BaseClass.cs" />
     <Compile Include="CommonUtilities\DataDrivenUtility.cs" />

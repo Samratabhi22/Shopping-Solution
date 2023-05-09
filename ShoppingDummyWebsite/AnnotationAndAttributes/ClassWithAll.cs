@@ -13,27 +13,27 @@ namespace ShoppingDummyWebsite.AnnotationAndAttributes
         [ClassInitialize]
         public static void ClassIni(TestContext context)
         {
-            Console.WriteLine("Class Initialized within class");
+            Console.WriteLine("Class Initialized within classWithAll");
         }
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            Console.WriteLine("Class Cleaned with in class");
-        }
-        [TestMethod]
-        public void TestMethod()
-        {
-            Console.WriteLine("Test Method One");
+            Console.WriteLine("Class Cleaned within classWithAll");
         }
         [TestMethod]
         public void TestMethod1()
         {
-            Console.WriteLine("Test Method Two");
+            Console.WriteLine("Test Method One within classWithAll");
         }
         [TestMethod]
         public void TestMethod2()
         {
-            Console.WriteLine("Test Method Three");
+            Console.WriteLine("Test Method Two within classWithAll");
+        }
+        [TestMethod]
+        public void TestMethod3()
+        {
+            Console.WriteLine("Test Method Three within classWithAll");
         }
 
     }

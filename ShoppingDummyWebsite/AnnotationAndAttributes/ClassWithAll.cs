@@ -23,17 +23,17 @@ namespace ShoppingDummyWebsite.AnnotationAndAttributes
         [TestMethod]
         public void TestMethod1()
         {
-            Console.WriteLine("Test Method One within classWithAll");
+            Console.WriteLine("Test Method One within same class i.e classWithAll");
         }
         [TestMethod]
         public void TestMethod2()
         {
-            Console.WriteLine("Test Method Two within classWithAll");
+            Console.WriteLine("Test Method Two within same class i.e classWithAll");
         }
         [TestMethod]
         public void TestMethod3()
         {
-            Console.WriteLine("Test Method Three within classWithAll");
+            Console.WriteLine("Test Method Three within same class i.e classWithAll");
         }
 
     }

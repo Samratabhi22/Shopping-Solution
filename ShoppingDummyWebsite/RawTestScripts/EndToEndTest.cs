@@ -24,7 +24,7 @@ namespace ShoppingDummyWebsite.RawTestScripts
                                 
 
             ProductsPage products_page = loginpage.validLogin(exUtil.Get_value_by_pasing_key("Ecom_Login", "username")); 
-          //  Console.WriteLine();
+            Console.WriteLine(loginpage.validLogin(exUtil.Get_value_by_pasing_key("Ecom_Login", "username")));
 
             //  ProductsPage products_pages = loginpage.validLogin(exUtil.Get_value_by_pasing_key("Ecom_Login", "password"));
 

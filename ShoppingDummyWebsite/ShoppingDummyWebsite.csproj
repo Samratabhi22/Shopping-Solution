@@ -451,6 +451,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnnotationAndAttributes\BaseClass.cs" />
     <Compile Include="AnnotationAndAttributes\ClassGeneric.cs" />
     <Compile Include="AnnotationAndAttributes\ClassWithAll.cs" />
     <Compile Include="AnnotationAndAttributes\ClassWithInheritance.cs" />

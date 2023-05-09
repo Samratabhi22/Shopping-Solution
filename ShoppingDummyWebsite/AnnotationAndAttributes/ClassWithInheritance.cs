@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ShoppingDummyWebsite.AnnotationAndAttributes
 {
     [TestClass]
-    public class ClassWithInheritance
+    public class ClassWithInheritance : ClassGeneric
     {
         [TestMethod]
         public void Example1()

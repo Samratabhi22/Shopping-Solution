@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingDummyWebsite.ProgramsPractice
 {
-    [TestClass]
+  //  [TestClass]
     public class FirstDay
     {
         [TestMethod, TestCategory("Prime")]

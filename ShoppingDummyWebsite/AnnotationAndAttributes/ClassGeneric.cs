@@ -10,8 +10,6 @@ namespace ShoppingDummyWebsite.AnnotationAndAttributes
     [TestClass]
     public class ClassGeneric
     {
-
-
         [TestInitialize]
         public void TestIni()
         {

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingDummyWebsite.AnnotationAndAttributes
 {
+    [TestClass]
     public class ClassWithoutInheritance
     {
         [TestMethod]

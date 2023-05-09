@@ -23,8 +23,10 @@ namespace ShoppingDummyWebsite.RawTestScripts
             LoginPage loginpage = new LoginPage(driver); 
                                 
 
-            ProductsPage products_page = loginpage.validLogin(exUtil.Get_value_by_pasing_key("Ecom_Login", "username"));
-             ProductsPage products_pages = loginpage.validLogin(exUtil.Get_value_by_pasing_key("Ecom_Login", "password"));
+            ProductsPage products_page = loginpage.validLogin(exUtil.Get_value_by_pasing_key("Ecom_Login", "username")); 
+          //  Console.WriteLine();
+
+            //  ProductsPage products_pages = loginpage.validLogin(exUtil.Get_value_by_pasing_key("Ecom_Login", "password"));
 
             products_page.waitForPageToDisplay();
             IList<IWebElement> actualProducts = products_page.getproducts();

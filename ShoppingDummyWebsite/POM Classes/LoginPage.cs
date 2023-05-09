@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ShoppingDummyWebsite.POM_Classes
@@ -44,6 +45,7 @@ namespace ShoppingDummyWebsite.POM_Classes
 
             userName.SendKeys(user);
             passWord.SendKeys(user);
+            Thread.Sleep(5000);
             checkbox.Click();
             signbtn.Click();
             return new ProductsPage(driver);

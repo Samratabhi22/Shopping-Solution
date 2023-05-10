@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace VtigerWebApplicationMSTestUnit.Utilities
 {
-    internal class ExcelUtility
+    public class ExcelUtility
     {
+
     }
 }

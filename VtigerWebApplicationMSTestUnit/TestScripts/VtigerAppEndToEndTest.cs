@@ -11,28 +11,22 @@ using VtigerWebApplicationMSTestUnit.Utilities;
 namespace VtigerWebApplicationMSTestUnit.TestScripts
 {
     [TestClass]
-    public  class VtigerAppEndToEndTest
+    public  class VtigerAppEndToEndTest : BaseClass
     {
 
-        public static IWebDriver driver;
-        public WebdriverUtility utility;
+        
+       
 
-       [ClassInitialize]
-        public static  void Setup(TestContext context)
-        {
-            // Set up the driver before each test
-            driver = new ChromeDriver();
-        }
-        [TestInitialize]
-        public void wait()
+        //[TestInitialize]
+        //public void wait()
 
-        {
-            utility = new WebdriverUtility();
-            utility.MaximizeWindow(driver);
+        //{
+        //    utility = new WebdriverUtility();
+        //    utility.MaximizeWindow(driver);
            
-            utility.ImplicitlyWaitingForSeconds(driver, 8);
+        //    utility.ImplicitlyWaitingForSeconds(driver, 8);
             
-        }
+        //}
         [TestMethod]
         public void Login_ValidCredentials_SuccessfulLogin()
         {
@@ -46,33 +40,37 @@ namespace VtigerWebApplicationMSTestUnit.TestScripts
             String dashboardTitle = driver.FindElement(By.XPath("//a[contains(text(),'Home')]")).Text;
          
            Assert.AreEqual("Home", dashboardTitle);
-            
-        }
-        [TestMethod]
-        
-        public void CreateContact_ValidData_ContactCreated()
-        {
-            
-
             ContactPage contact = new ContactPage(driver);
             contact.Create_Contact("John", "Doe", "john.doe@example.com");
-
             // Wait for the contact detail page to load
-           
             String contactDetailTitle = driver.FindElement(By.XPath(" //span[contains(text(),'Contact Information')]")).Text;
-            StringAssert.Contains(contactDetailTitle,"Contact Information" );
-
+               StringAssert.Contains(contactDetailTitle,"Contact Information" );
             // Assert that the contact was created successfully
             String contactName = driver.FindElement(By.XPath("//span[@class='dvHeaderText']")).Text;
-            StringAssert.Contains(contactName,"Doe John") ;
-        }
+            StringAssert.Contains(contactName, "Doe John");
 
-        [ClassCleanup]
-        public static void Cleanup()
-        {
-            // Clean up the driver after each test
-            driver.Quit();
+
         }
+        //[TestMethod]
+
+        //public void CreateContact_ValidData_ContactCreated()
+        //{
+
+
+        //    ContactPage contact = new ContactPage(driver);
+        //    contact.Create_Contact("John", "Doe", "john.doe@example.com");
+
+        //    // Wait for the contact detail page to load
+
+        //    String contactDetailTitle = driver.FindElement(By.XPath(" //span[contains(text(),'Contact Information')]")).Text;
+        //    StringAssert.Contains(contactDetailTitle,"Contact Information" );
+
+        //    // Assert that the contact was created successfully
+        //    String contactName = driver.FindElement(By.XPath("//span[@class='dvHeaderText']")).Text;
+        //    StringAssert.Contains(contactName,"Doe John") ;
+        //}
+
+
 
 
     }

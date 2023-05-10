@@ -11,13 +11,6 @@ namespace VtigerWebApplicationMSTestUnit.POM_Pages
 {
     public class ContactPage
     {
-        //IWebElement createButton = driver.FindElement(By.XPath("//a[text()='Contacts']"));
-        //createButton.Click();
-        // IWebElement plusicon = driver.FindElement(By.XPath("//img[contains(@title,'Create Contact')]"));
-        //  plusicon.Click();
-
-        //var firstNameInput = driver.FindElement(By.Name("firstname"));
-       // firstNameInput.SendKeys("John");
 
         [FindsBy(How = How.XPath, Using = "//a[text()='Contacts']")]
         private IWebElement Contacts_Mod { get; set; }

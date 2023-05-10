@@ -14,7 +14,8 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
     public class BaseClass
     {
         public static IWebDriver driver;
-       public WebdriverUtility utility;
+        public WebdriverUtility utility;
+        public ExcelUtility exUtil;
         public static ExtentReports extent;//understood
         public ExtentTest test;
         public static ExtentHtmlReporter htmlReporter;//understood
@@ -36,15 +37,14 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
             extent.AddSystemInfo("Environment", "TestingEnvironment");
             extent.AddSystemInfo("QA Name", "Abhishek Kumar");
 
-            //here we gave all the information to generate the Report--->PArt 1
+            //here we gave all the information how to generate the Report--->PArt 1
         }
-
-      
-
 
         [TestInitialize]
         public void initialize()
         {
+            //CREATE REPORT ----> PArt2
+
             //report ---->  Report Results to ExtentReports
             //create entry for your report(this is the test coming from your report)
             //then finally you can say it is pass or fail
@@ -53,7 +53,8 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
             var test= extent.CreateTest(TestContext.TestName);
 
             driver = new ChromeDriver();
-           driver.Navigate().GoToUrl("http://localhost:8888/");
+            exUtil = new ExcelUtility();
+            driver.Navigate().GoToUrl("http://localhost:8888/");
              utility = new WebdriverUtility();
             utility.MaximizeWindow(driver);
            utility.ImplicitlyWaitingForSeconds(driver,8);
@@ -63,12 +64,13 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
         [TestCleanup]
         public void Cleanup()
         {
-            //  test.Log(test.Status);
+            //Generate the final report according to Pass or Fail ----> PArt 3
+          //  test.Log(test.Status);
             var res = TestContext.CurrentTestOutcome;
             if (res.Equals(Status.Fail))
             {
                 test.Fail("Test Failed");
-               // WebdriverUtility utility = new WebdriverUtility();
+               
                 utility.TakeScreenShot(driver, TestContext.TestName);
                 test.AddScreenCaptureFromPath(screenShotPath, "Failed");
                 test.Log(Status.Info, "--->Test Failed");
@@ -88,30 +90,7 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
             driver.Quit();
            // driver.Dispose();
 
-            //test.Log(test.Status);
-            //var res = test.Status;
-            //if (res.Equals(Status.Fail))
-            //{
-            //    test.Fail("Test Failed");
-            //    WebdriverUtility utility = new WebdriverUtility();
-            //    utility.TakeScreenShot(driver, TestContext.TestName);
-            //    test.AddScreenCaptureFromPath(screenShotPath, "Failed");
-            //    test.Log(Status.Info, "--->Test Failed");
-            //    Console.WriteLine("Test Failed");
-
-            //}
-            //else
-            //{
-            //    test.Pass("Test Passed");
-            //    test.Log(Status.Pass, "--->Test Passed");
-            //    test.Log(test.Status);
-            //    Console.WriteLine(test.Status);
-            //    Console.WriteLine("Test Passed");
-            //}
-
-            // test.AddScreenCaptureFromPath(screenShotPath);
-            // driver.Close();
-            // driver.Dispose();
+            
 
         }
 

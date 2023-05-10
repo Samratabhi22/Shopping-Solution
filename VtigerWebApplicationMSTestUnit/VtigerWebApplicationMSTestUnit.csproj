@@ -25,6 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DataDrivenUtility\Snapshots\" />
+    <Folder Include="DataDrivenUtility\reports\" />
     <Folder Include="Utilities\Report\" />
     <Folder Include="Utilities\ScreenShots\" />
   </ItemGroup>

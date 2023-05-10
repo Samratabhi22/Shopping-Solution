@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace ShoppingDummyWebsite.AnnotationAndAttributes
 {
-    [TestClass]
+  //  [TestClass]
     public class BaseClass
     {
-        [AssemblyInitialize]
+      //  [AssemblyInitialize]
         public static void AssemblyIni(TestContext context)
         {
             Console.WriteLine("Assembly iniitialized");
         }
-        [AssemblyCleanup]
+      //  [AssemblyCleanup]
         public static void AssemblyCleanup()
         {
             Console.WriteLine("Assembly cleanedup");

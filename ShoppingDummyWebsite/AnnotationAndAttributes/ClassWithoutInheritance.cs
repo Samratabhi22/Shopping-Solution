@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace ShoppingDummyWebsite.AnnotationAndAttributes
 {
-    [TestClass]
+  //  [TestClass]
     public class ClassWithoutInheritance
     {
-        [TestMethod]
+       // [TestMethod]
         public void Sample1()
         {
             Console.WriteLine(" Sample1 Test Method without Inheriting");
         }
-        [TestMethod]
+       // [TestMethod]
         public void Sample2()
         {
             Console.WriteLine(" Sample2 Test Method without Inheriting");
         }
-        [TestMethod]
+       // [TestMethod]
         public void Sample3()
         {
             Console.WriteLine(" Sample3 Test Method without Inheriting");

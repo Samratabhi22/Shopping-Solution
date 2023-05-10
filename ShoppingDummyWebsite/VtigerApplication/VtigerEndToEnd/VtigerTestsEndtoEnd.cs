@@ -43,8 +43,9 @@ namespace ShoppingDummyWebsite.VtigerApplication.VtigerEndToEnd
             loginButton.Click();
 
             // Wait for the dashboard page to load
-            var dashboardTitle = driver.FindElement(By.CssSelector(".pageTitle"));
-            Assert.AreEqual("Dashboard", dashboardTitle.Text);
+
+            var dashboardTitle = driver.FindElement(By.XPath("//title"));
+            Assert.AreEqual("Administrator - Home - vtiger CRM 5 - Commercial Open Source CRM", dashboardTitle.Text);
         }
 
         [TestMethod]

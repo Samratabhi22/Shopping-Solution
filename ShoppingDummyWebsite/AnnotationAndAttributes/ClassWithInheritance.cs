@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace ShoppingDummyWebsite.AnnotationAndAttributes
 {
-    [TestClass]
+   // [TestClass]
     public class ClassWithInheritance : ClassGeneric
     {
-        [TestMethod]
+       // [TestMethod]
         public void Example1()
         {
             Console.WriteLine(" Example1 Test Method of ClassWithInheritance class is Inheriting from ClassGeneric class");
         }
-        [TestMethod]
+       // [TestMethod]
         public void Example2()
         {
             Console.WriteLine(" Example2 Test Method of ClassWithInheritance class is Inheriting from ClassGeneric class");
         }
-        [TestMethod]
+      //  [TestMethod]
         public void Example3()
         {
             Console.WriteLine("Example3  Test Method of ClassWithInheritance class is Inheriting from ClassGeneric class");

@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace ShoppingDummyWebsite.AnnotationAndAttributes
 {
-    [TestClass]
+   // [TestClass]
     public class ClassGeneric
     {
-        [TestInitialize]
+        //[TestInitialize]
         public void TestIni()
         {
             Console.WriteLine("Test Initialized executed in TestIni() method inside of ClassGeneric class");
         }
-        [TestCleanup]
+       // [TestCleanup]
         public void TestClean()
         {
             Console.WriteLine("Test Cleaned executed in TestClean() method of ClassGeneric class");

@@ -7,30 +7,30 @@ using System.Threading.Tasks;
 
 namespace ShoppingDummyWebsite.AnnotationAndAttributes
 {
-    [TestClass]
+    //[TestClass]
     public class ClassWithAll
     {
-        [ClassInitialize]
+       // [ClassInitialize]
         public static void ClassIni(TestContext context)
         {
             Console.WriteLine("Class Initialized within classWithAll");
         }
-        [ClassCleanup]
+      //  [ClassCleanup]
         public static void ClassCleanup()
         {
             Console.WriteLine("Class Cleaned within classWithAll");
         }
-        [TestMethod]
+       // [TestMethod]
         public void TestMethod1()
         {
             Console.WriteLine("Test Method One within same class i.e classWithAll");
         }
-        [TestMethod]
+       // [TestMethod]
         public void TestMethod2()
         {
             Console.WriteLine("Test Method Two within same class i.e classWithAll");
         }
-        [TestMethod]
+       // [TestMethod]
         public void TestMethod3()
         {
             Console.WriteLine("Test Method Three within same class i.e classWithAll");

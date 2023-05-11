@@ -10,6 +10,9 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
 {
     public  class WebdriverUtility
     {
+        
+
+
         public void ImplicitlyWaitingForSeconds(IWebDriver driver, int seconds)
 
         {
@@ -69,16 +72,13 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
         {
             driver.SwitchTo().Alert().SendKeys(text);
         }
-        public string TakeScreenShot(IWebDriver driver, string testName)
+        public static void TakeScreenShot(IWebDriver driver)
         {
             ITakesScreenshot screenshot = (ITakesScreenshot)driver;
-            Screenshot ss = screenshot.GetScreenshot();
-            string screenShotPath = " C:\\Users\\Hp\\source\\repos\\ECommerceProject\\Shopping Solution\\VtigerWebApplicationMSTestUnit\\Utilities\\ScreenShots\\" + testName + ".png";
-            Console.WriteLine(screenShotPath);
-            ss.SaveAsFile(screenShotPath, ScreenshotImageFormat.Png);
-            return screenShotPath;
-
-           
+            var ss = screenshot.GetScreenshot();
+            Utilities.BaseClass. screenShotPath = "C:\\Users\\Hp\\source\\repos\\ECommerceProject\\Shopping Solution\\VtigerWebApplicationMSTestUnit\\Utilities\\ScreenShots\\ss.png";
+            ss.SaveAsFile(Utilities.BaseClass.screenShotPath, ScreenshotImageFormat.Png);
+           // return screenShotPath;
 
         }
     }

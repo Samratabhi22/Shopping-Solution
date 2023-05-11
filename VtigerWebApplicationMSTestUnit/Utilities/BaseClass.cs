@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace VtigerWebApplicationMSTestUnit.Utilities
 {
@@ -18,8 +19,10 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
         public ExcelUtility exUtil;
         public static ExtentReports extent;//understood
         public ExtentTest test;
+
         public static ExtentHtmlReporter htmlReporter;//understood
-        public string screenShotPath = "C:\\Users\\Hp\\source\\repos\\ECommerceProject\\Shopping Solution\\VtigerWebApplicationMSTestUnit\\Utilities\\ScreenShots\\ss.png";
+        public static string reportPath = "C:\\Users\\Hp\\source\\repos\\ECommerceProject\\Shopping Solution\\VtigerWebApplicationMSTestUnit\\Utilities\\Report\\";
+        public static string screenShotPath;
 
         public TestContext TestContext { get; set; }
 
@@ -27,11 +30,10 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
         public static void SetupReporting(TestContext context)
         {
             // Initialize ExtentReports and attach the HTML reporter
-            htmlReporter = new ExtentHtmlReporter("C:\\Users\\Hp\\source\\repos\\ECommerceProject\\Shopping Solution\\VtigerWebApplicationMSTestUnit\\Utilities\\Report\\");
             extent = new ExtentReports();
-
+            htmlReporter = new ExtentHtmlReporter("reportPath");
+            htmlReporter.Start();
             extent.AttachReporter(htmlReporter);
-
 
             extent.AddSystemInfo("HostName", "localhost");
             extent.AddSystemInfo("Environment", "TestingEnvironment");
@@ -43,14 +45,7 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
         [TestInitialize]
         public void initialize()
         {
-            //CREATE REPORT ----> PArt2
-
-            //report ---->  Report Results to ExtentReports
-            //create entry for your report(this is the test coming from your report)
-            //then finally you can say it is pass or fail
-            //I am writing this in [TestInitialize] so that before executing every test this [TestInitialize] method will execute
-            // var test=extent.CreateTest(TestContext.CurrentContext.Test.Name);
-            var test= extent.CreateTest(TestContext.TestName);
+            test=extent.CreateTest(TestContext.TestName);
 
             driver = new ChromeDriver();
             exUtil = new ExcelUtility();
@@ -64,42 +59,19 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
         [TestCleanup]
         public void Cleanup()
         {
-            //Generate the final report according to Pass or Fail ----> PArt 3
-          //  test.Log(test.Status);
-            var res = TestContext.CurrentTestOutcome;
-            if (res.Equals(Status.Fail))
+            
+            if (test.Status.Equals(Status.Fail))
             {
-                test.Fail("Test Failed");
-               
-                utility.TakeScreenShot(driver, TestContext.TestName);
-                test.AddScreenCaptureFromPath(screenShotPath, "Failed");
-                test.Log(Status.Info, "--->Test Failed");
-                Console.WriteLine("Test Failed");
-
-            }
-            else if(res.Equals(Status.Pass))
-            {
-
-                 // test.Pass("Test Passed");
-                  test.Log(Status.Pass, "--->Test Passed");
-                   test.Log(test.Status);
-                   Console.WriteLine(test.Status);
-                   Console.WriteLine("Test Passed");
-
+                 WebdriverUtility.TakeScreenShot(driver);
+                Console.Write(screenShotPath);
+                test.AddScreenCaptureFromPath(screenShotPath);
             }
             driver.Quit();
-           // driver.Dispose();
-
-            
-
+           driver.Dispose();
         }
-
-
         [AssemblyCleanup]
         public static void GenerateReport()
         {
-            // Flush the ExtentReports instance to write the report to the output file
-
             extent.Flush();
             htmlReporter.Stop();
         }

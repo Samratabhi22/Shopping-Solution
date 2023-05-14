@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+	<TestRunParameters>
+		<Parameter name="actiTime" value="https://demo.actitime.com/login.do" />
+		<Parameter name="DEMOQA" value="https://demoqa.com/" />
+		<Parameter name="freejobAlert" value="https://www.freejobalert.com/" />
+	</TestRunParameters>
+</RunSettings>

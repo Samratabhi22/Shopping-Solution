@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingDummyWebsite", "ShoppingDummyWebsite\ShoppingDummyWebsite.csproj", "{1BE81087-174C-49A8-B34C-EEBD17C939AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VtigerWebApplicationMSTestUnit", "VtigerWebApplicationMSTestUnit\VtigerWebApplicationMSTestUnit.csproj", "{1F9371EC-11BA-4BA0-AB98-64D2D69D3E31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VtigerWebApplicationMSTestUnit", "VtigerWebApplicationMSTestUnit\VtigerWebApplicationMSTestUnit.csproj", "{1F9371EC-11BA-4BA0-AB98-64D2D69D3E31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingSession", "ProgrammingSession\ProgrammingSession.csproj", "{6010242A-A886-4B18-9FB0-3E968A3B23F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1F9371EC-11BA-4BA0-AB98-64D2D69D3E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F9371EC-11BA-4BA0-AB98-64D2D69D3E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F9371EC-11BA-4BA0-AB98-64D2D69D3E31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6010242A-A886-4B18-9FB0-3E968A3B23F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6010242A-A886-4B18-9FB0-3E968A3B23F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6010242A-A886-4B18-9FB0-3E968A3B23F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6010242A-A886-4B18-9FB0-3E968A3B23F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

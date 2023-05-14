@@ -31,7 +31,7 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
         {
             // Initialize ExtentReports and attach the HTML reporter
             extent = new ExtentReports();
-            htmlReporter = new ExtentHtmlReporter("reportPath");
+            htmlReporter = new ExtentHtmlReporter(reportPath);
             htmlReporter.Start();
             extent.AttachReporter(htmlReporter);
 
@@ -60,12 +60,12 @@ namespace VtigerWebApplicationMSTestUnit.Utilities
         public void Cleanup()
         {
             
-            if (test.Status.Equals(Status.Fail))
-            {
-                 WebdriverUtility.TakeScreenShot(driver);
-                Console.Write(screenShotPath);
-                test.AddScreenCaptureFromPath(screenShotPath);
-            }
+            //if (test.Status.Equals(Status.Fail))
+            //{
+            //     WebdriverUtility.TakeScreenShot(driver);
+            //    Console.Write(screenShotPath);
+            //    test.AddScreenCaptureFromPath(screenShotPath);
+            //}
             driver.Quit();
            driver.Dispose();
         }

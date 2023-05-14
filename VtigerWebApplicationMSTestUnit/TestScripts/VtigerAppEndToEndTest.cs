@@ -19,8 +19,6 @@ namespace VtigerWebApplicationMSTestUnit.TestScripts
         [TestMethod]
         public void Login_ValidCredentials_SuccessfulLogin()
         {
-            // Navigate to the login page
-           // driver.Navigate().GoToUrl("http://localhost:8888/");
             
             LoginPage login = new LoginPage(driver);
             login.Valid_Login(exUtil.Get_value_by_pasing_key("Login", "username"), exUtil.Get_value_by_pasing_key("Login", "password"));
@@ -71,7 +69,8 @@ namespace VtigerWebApplicationMSTestUnit.TestScripts
                 login.Valid_Login(exUtil.Get_value_by_pasing_key("Login", "username_wrong"), exUtil.Get_value_by_pasing_key("Login", "password_wrong"));
                 test.Log(Status.Info, "Test Executed");
                 // Wait for the dashboard page to load
-                dashboardTitle = driver.FindElement(By.XPath("//a[contains(text(),'Home')]")).Text;
+                //  dashboardTitle = driver.FindElement(By.XPath("//a[contains(text(),'Home')]")).Text;
+                dashboardTitle =driver.Title;
                 
                 Assert.AreEqual("Home", dashboardTitle);
                 test.Pass("Test Passed");
@@ -79,10 +78,13 @@ namespace VtigerWebApplicationMSTestUnit.TestScripts
             }
             catch(Exception ex) 
             {
-                test.Fail("Test Failed");
+               test.Fail("Test Failed");
+              
                 test.Info(ex);
+                WebdriverUtility.TakeScreenShot(driver);
                 test.AddScreenCaptureFromPath(Utilities.BaseClass.screenShotPath);
-              //  Assert.AreEqual("Home", dashboardTitle);
+                Console.Write(Utilities.BaseClass.screenShotPath);
+                
 
             }
 
